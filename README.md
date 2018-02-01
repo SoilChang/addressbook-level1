@@ -54,7 +54,7 @@ Please refer to the [Setting up](#setting-up) section to learn how to set up the
 1. 'Build' the project using IntelliJ (`Build` -> `Build Project`)
 2. Open the `Terminal`/`Command Prompt`. Note: You can open a terminal inside Intellij too (`View` -> `Tool Windows` -> `Terminal`)
 3. `cd` into the project's `out\production\addressbook-level1` directory. Note: That is the where Intellij puts its compiled class files.
-4. Type `java seedu.addressbook.AddressBook`, then <kbd>Enter</kbd> to execute
+4. Type `java hohuan.addressbook.AddressBook`, then <kbd>Enter</kbd> to execute
 5. Now you can interact with the program through the CLI
 
 ## List of commands
@@ -126,8 +126,8 @@ You can change the location by specifying the file path as a program argument.
 
 Example:
 
-* `java seedu.addressbook.AddressBook mydata.txt`
-* `java seedu.addressbook.AddressBook myFolder/mydata.txt`
+* `java hohuan.addressbook.AddressBook mydata.txt`
+* `java hohuan.addressbook.AddressBook myFolder/mydata.txt`
 
 > The file path must contain a valid file name and a valid parent directory.<br>
   File name is valid if it has an extension and no reserved characters (OS-dependent).<br>

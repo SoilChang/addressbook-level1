@@ -1,4 +1,4 @@
-package seedu.addressbook;
+package hohuan.addressbook;
 /*
  * NOTE : =============================================================
  * This class is written in a procedural fashion (i.e. not Object-Oriented)
