@@ -88,7 +88,7 @@ public class AddressBook {
     private static final String MESSAGE_ERROR_WRITING_TO_FILE = "Unexpected error: unable to write to file: %1$s";
     private static final String MESSAGE_PERSONS_FOUND_OVERVIEW = "%1$d persons found!";
     private static final String MESSAGE_STORAGE_FILE_CREATED = "Created new empty storage file: %1$s";
-    private static final String MESSAGE_WELCOME = "Welcome to your Address Book!";
+    private static final String MESSAGE_WELCOME = "Welcome to the Address Book!";
     private static final String MESSAGE_USING_DEFAULT_FILE = "Using default storage file : " + DEFAULT_STORAGE_FILEPATH;
 
     // These are the prefix strings to define the data type of a command parameter
@@ -208,6 +208,7 @@ public class AddressBook {
 
     public static void main(String[] args) {
         showWelcomeMessage();
+        listFunctionalities();
         processProgramArgs(args);
         loadDataFromStorage();
         while (true) {
@@ -216,6 +217,10 @@ public class AddressBook {
             String feedback = executeCommand(userCommand);
             showResultToUser(feedback);
         }
+    }
+
+    public static void listFunctionalities(){
+        System.out.println("Here is what you can do");
     }
 
     /*
@@ -254,7 +259,7 @@ public class AddressBook {
      * If a valid storage file is specified, sets up that file for storage.
      * Otherwise sets up the default file for storage.
      *
-     * @param args full program arguments passed to application main method
+     * @param args full progrguments passed to application main method
      */
     private static void processProgramArgs(String[] args) {
         if (args.length >= 2) {
