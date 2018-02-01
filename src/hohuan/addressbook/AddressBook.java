@@ -308,7 +308,7 @@ public class AddressBook {
      */
     private static void setupDefaultFileForStorage() {
         showToUser(MESSAGE_USING_DEFAULT_FILE);
-        storageFilePath = DEFAULT_STORAGE_FILEPATH;
+        storageFilePath = Messages.DEFAULT_STORAGE_FILEPATH;
         createFileIfMissing(storageFilePath);
     }
 
