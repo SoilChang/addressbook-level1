@@ -1,5 +1,4 @@
 package seedu.addressbook;
-
 /*
  * NOTE : =============================================================
  * This class is written in a procedural fashion (i.e. not Object-Oriented)
@@ -44,7 +43,7 @@ public class AddressBook {
     /**
      * Version info of the program.
      */
-    private static final String VERSION = "AddessBook Level 1 - Version 1.0";
+    private static final String VERSION = "AddessBook Level 1 - Version 2.0";
 
     /**
      * A decorative prefix added to the beginning of lines printed by AddressBook
@@ -89,7 +88,7 @@ public class AddressBook {
     private static final String MESSAGE_PERSONS_FOUND_OVERVIEW = "%1$d persons found!";
     private static final String MESSAGE_STORAGE_FILE_CREATED = "Created new empty storage file: %1$s";
     private static final String MESSAGE_WELCOME = "Welcome to the Address Book!";
-    private static final String MESSAGE_USING_DEFAULT_FILE = "Using default storage file : " + DEFAULT_STORAGE_FILEPATH;
+    private static final String MESSAGE_USING_DEFAULT_FILE = "Using default storage file : " + Messages.DEFAULT_STORAGE_FILEPATH;
 
     // These are the prefix strings to define the data type of a command parameter
     private static final String PERSON_DATA_PREFIX_PHONE = "p/";
@@ -207,9 +206,10 @@ public class AddressBook {
      */
 
     public static void main(String[] args) {
-        showWelcomeMessage();
-        listFunctionalities();
-        processProgramArgs(args);
+        AddressBook adbook = new AddressBook();
+        adbook.showWelcomeMessage();
+        adbook.listFunctionalities();
+        adbook.processProgramArgs(args);
         loadDataFromStorage();
         while (true) {
             String userCommand = getUserInput();
@@ -219,8 +219,8 @@ public class AddressBook {
         }
     }
 
-    public static void listFunctionalities(){
-        System.out.println("Here is what you can do");
+    private void listFunctionalities(){
+        System.out.println("|| Here is what you can do");
     }
 
     /*
@@ -231,7 +231,7 @@ public class AddressBook {
      * ====================================================================
      */
 
-    private static void showWelcomeMessage() {
+    private  void showWelcomeMessage() {
         showToUser(DIVIDER, DIVIDER, VERSION, MESSAGE_WELCOME, DIVIDER);
     }
 
@@ -261,7 +261,8 @@ public class AddressBook {
      *
      * @param args full progrguments passed to application main method
      */
-    private static void processProgramArgs(String[] args) {
+    private  void processProgramArgs(String[] args) {
+        //passing more than 1 argument is considered invalid
         if (args.length >= 2) {
             showToUser(MESSAGE_INVALID_PROGRAM_ARGS);
             exitProgram();
