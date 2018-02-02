@@ -482,6 +482,7 @@ public class AddressBook {
      */
     private static String executeListAllPersonsInAddressBook() {
         ArrayList<String[]> toBeDisplayed = getAllPersonsInAddressBook();
+        toBeDisplayed.sort((person1, person2)-> person1[PERSON_DATA_INDEX_NAME].compareToIgnoreCase(person2[PERSON_DATA_INDEX_NAME]));
         showToUser(toBeDisplayed);
         return getMessageForPersonsDisplayedSummary(toBeDisplayed);
     }
