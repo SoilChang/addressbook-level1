@@ -1,10 +1,4 @@
 package hohuan.addressbook;
-/*
- * NOTE : =============================================================
- * This class is written in a procedural fashion (i.e. not Object-Oriented)
- * Yes, it is possible to write non-OO code using an OO language.
- * ====================================================================
- */
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -281,6 +275,8 @@ public class AddressBook {
             return executeFindPersons(commandArgs);
         case DefaultString.COMMAND_LIST_WORD:
             return executeListAllPersonsInAddressBook();
+        case DefaultString.COMMAND_SORT_WORD:
+            return executeSortAllPersonsInAddressBook();
         case DefaultString.COMMAND_DELETE_WORD:
             return executeDeletePerson(commandArgs);
         case DefaultString.COMMAND_CLEAR_WORD:
@@ -482,7 +478,19 @@ public class AddressBook {
      */
     private static String executeListAllPersonsInAddressBook() {
         ArrayList<String[]> toBeDisplayed = getAllPersonsInAddressBook();
-        toBeDisplayed.sort((person1, person2)-> person1[PERSON_DATA_INDEX_NAME].compareToIgnoreCase(person2[PERSON_DATA_INDEX_NAME]));
+        showToUser(toBeDisplayed);
+        return getMessageForPersonsDisplayedSummary(toBeDisplayed);
+    }
+
+    /**
+     * Displays all persons in the address book to the user; in added order.
+     *
+     * @return feedback display message for the operation result
+     */
+    private static String executeSortAllPersonsInAddressBook() {
+        ArrayList<String[]> toBeDisplayed = getAllPersonsInAddressBook();
+        toBeDisplayed.sort((person1, person2) -> person1[PERSON_DATA_INDEX_NAME]
+                .compareToIgnoreCase(person2[PERSON_DATA_INDEX_NAME]));
         showToUser(toBeDisplayed);
         return getMessageForPersonsDisplayedSummary(toBeDisplayed);
     }
@@ -1041,7 +1049,8 @@ public class AddressBook {
 
     /** Returns the string for showing 'exit' command usage instruction */
     private static String getUsageInfoForExitCommand() {
-        return String.format(DefaultString.MESSAGE_COMMAND_HELP, DefaultString.COMMAND_EXIT_WORD, DefaultString.COMMAND_EXIT_DESC)
+        return String.format(DefaultString.MESSAGE_COMMAND_HELP, DefaultString.COMMAND_EXIT_WORD,
+                DefaultString.COMMAND_EXIT_DESC)
                 + String.format(DefaultString.MESSAGE_COMMAND_HELP_EXAMPLE, DefaultString.COMMAND_EXIT_EXAMPLE);
     }
 

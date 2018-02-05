@@ -10,7 +10,7 @@ then
 fi
 
 # compile the code into the bin folder
-javac  ../src/hohuan/addressbook/AddressBook.java -d ../bin
+javac  ../src/hohuan/addressbook/*.java -d ../bin
 
 # (invalid) no parent directory, invalid filename with no extension
 java -classpath ../bin hohuan.addressbook.AddressBook ' ' < /dev/null > actual.txt

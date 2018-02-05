@@ -7,7 +7,7 @@ rm  ./bin/hohuan/addressbook/*.class
 javac  ./src/hohuan/addressbook/*.java -d ./bin
 
 
-java -classpath ./bin hohuan.addressbook.AddressBook ' '
+java -classpath ./bin hohuan.addressbook.AddressBook 
 
 
 

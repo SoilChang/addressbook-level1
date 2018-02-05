@@ -1,3 +1,5 @@
+package hohuan.addressbook;
+
 public class Config {
   /* We use a String array to store details of a single person.
   * The constants given below are the indexes for the different data elements of a person
