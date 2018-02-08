@@ -102,7 +102,7 @@ public class AddressBook {
     public static void main(String[] args) {
         AddressBook adbook = new AddressBook();
         adbook.showWelcomeMessage();
-        adbook.listFunctionalities();
+        // adbook.listFunctionalities();
         adbook.processProgramArgs(args);
         loadDataFromStorage();
         while (true) {

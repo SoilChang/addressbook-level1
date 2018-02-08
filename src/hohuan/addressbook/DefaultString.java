@@ -18,7 +18,7 @@ public class DefaultString {
     /**
      * Version info of the program.
      */
-    public static final String VERSION = "AddessBook Level 1 - Version 2.0";
+    public static final String VERSION = "AddessBook Level 1 - Version 1.0";
 
     /**
     * A decorative prefix added to the beginning of lines printed by AddressBook
@@ -64,7 +64,7 @@ public class DefaultString {
     public static final String MESSAGE_ERROR_WRITING_TO_FILE = "Unexpected error: unable to write to file: %1$s";
     public static final String MESSAGE_PERSONS_FOUND_OVERVIEW = "%1$d persons found!";
     public static final String MESSAGE_STORAGE_FILE_CREATED = "Created new empty storage file: %1$s";
-    public static final String MESSAGE_WELCOME = "Welcome to the Address Book!";
+    public static final String MESSAGE_WELCOME = "Welcome to your Address Book!";
     public static final String MESSAGE_USING_DEFAULT_FILE = "Using default storage file : "
             + DefaultString.DEFAULT_STORAGE_FILEPATH;
 
